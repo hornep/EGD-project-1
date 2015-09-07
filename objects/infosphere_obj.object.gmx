@@ -51,18 +51,17 @@ global.current_room_up = room_height
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(object0.x &gt; global.current_room_right - 400)
+            <string>if(object0.x &gt; global.current_room_right - 500)
 {
-    global.current_room_right += 400
-    instance_create(object0.x + 500, object0.y, object1)
-   // global.current_room_right += 400;
-    //grass_to_add = irandom_range(1, 10)
+    global.current_room_right += 500
+    grass_to_add = irandom_range(200, 250)
     
-    //i = 0
-    //while( i &lt; grass_to_add)
-    //{
-      //  instance_create(irandom_range(object0.x, global.current_room_right), irandom_range(global.current_room_up, global.current_room_down), object1)
-    //}
+    i = 0
+    while( i &lt; grass_to_add)
+    {
+        instance_create(irandom_range(object0.x, global.current_room_right), irandom_range(global.current_room_up, global.current_room_down), object1)
+        i+=1
+    }
 }
 </string>
           </argument>
