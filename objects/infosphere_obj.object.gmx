@@ -59,7 +59,47 @@ global.current_room_up = room_height
     i = 0
     while( i &lt; grass_to_add)
     {
-        instance_create(irandom_range(object0.x, global.current_room_right), irandom_range(global.current_room_up, global.current_room_down), object1)
+        instance_create(irandom_range(object0.x + 500, global.current_room_right), irandom_range(global.current_room_up, global.current_room_down), object1)
+        i+=1
+    }
+}
+
+if(object0.x &lt; global.current_room_left + 500)
+{
+    global.current_room_left -= 500
+    grass_to_add = irandom_range(200, 250)
+    
+    i = 0
+    while( i &lt; grass_to_add)
+    {
+        instance_create(irandom_range(object0.x - 500, global.current_room_left), irandom_range(global.current_room_up, global.current_room_down), object1)
+        i+=1
+    }
+}
+
+if(object0.y &lt; global.current_room_down + 300)
+{
+    global.current_room_down -= 300
+    grass_to_add = irandom_range(200, 250)
+    
+    i = 0
+    while( i &lt; grass_to_add)
+    {
+        instance_create(irandom_range(global.current_room_left, global.current_room_right), irandom_range(object0.y - 300, global.current_room_down), object1)
+        i+=1
+    }
+}
+
+
+if(object0.y &gt; global.current_room_up - 300)
+{
+    global.current_room_up += 300
+    grass_to_add = irandom_range(200, 250)
+    
+    i = 0
+    while( i &lt; grass_to_add)
+    {
+        instance_create(irandom_range(global.current_room_left, global.current_room_right), irandom_range(object0.y + 300, global.current_room_up), object1)
         i+=1
     }
 }

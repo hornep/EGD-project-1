@@ -9,10 +9,6 @@
     <sprite>sprites\sprite0</sprite>
     <sprite>sprites\sprite1</sprite>
     <sprite>sprites\sprite2</sprite>
-    <sprite>sprites\up_warp_sprite</sprite>
-    <sprite>sprites\down_warp_sprite</sprite>
-    <sprite>sprites\left_warp_sprite</sprite>
-    <sprite>sprites\right_warp_sprite</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -21,10 +17,6 @@
     <object>objects\object1</object>
     <object>objects\object2</object>
     <object>objects\infosphere_obj</object>
-    <object>objects\up_warp_obj</object>
-    <object>objects\down_warp_obj</object>
-    <object>objects\left_warp_obj</object>
-    <object>objects\right_warp_obj</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
