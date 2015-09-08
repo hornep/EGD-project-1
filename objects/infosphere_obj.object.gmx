@@ -51,55 +51,91 @@ global.current_room_up = room_height
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(object0.x &gt; global.current_room_right - 500)
+            <string>if(object0.x &gt; global.current_room_right - 1500)
 {
-    global.current_room_right += 500
+    global.current_room_right += 1500
     grass_to_add = irandom_range(200, 250)
     
     i = 0
     while( i &lt; grass_to_add)
     {
-        instance_create(irandom_range(object0.x + 500, global.current_room_right), irandom_range(global.current_room_up, global.current_room_down), object1)
+        instance_create(irandom_range(object0.x + 1500, global.current_room_right), irandom_range(global.current_room_up, global.current_room_down), object1)
+        i+=1
+    }
+    
+    monolith_to_add = irandom_range(5, 10)
+    
+    i = 0
+    while( i &lt; monolith_to_add)
+    {
+        instance_create(irandom_range(object0.x + 1500, global.current_room_right), irandom_range(global.current_room_up, global.current_room_down), monolith)
         i+=1
     }
 }
 
-if(object0.x &lt; global.current_room_left + 500)
+if(object0.x &lt; global.current_room_left + 1500)
 {
-    global.current_room_left -= 500
+    global.current_room_left -= 1500
     grass_to_add = irandom_range(200, 250)
     
     i = 0
     while( i &lt; grass_to_add)
     {
-        instance_create(irandom_range(object0.x - 500, global.current_room_left), irandom_range(global.current_room_up, global.current_room_down), object1)
+        instance_create(irandom_range(object0.x - 1500, global.current_room_left), irandom_range(global.current_room_up, global.current_room_down), object1)
+        i+=1
+    }
+    
+    monolith_to_add = irandom_range(5, 10)
+    
+    i = 0
+    while( i &lt; monolith_to_add)
+    {
+        instance_create(irandom_range(object0.x - 1500, global.current_room_left), irandom_range(global.current_room_up, global.current_room_down), monolith)
         i+=1
     }
 }
 
-if(object0.y &lt; global.current_room_down + 300)
+if(object0.y &lt; global.current_room_down + 1500)
 {
-    global.current_room_down -= 300
+    global.current_room_down -= 1500
     grass_to_add = irandom_range(200, 250)
     
     i = 0
     while( i &lt; grass_to_add)
     {
-        instance_create(irandom_range(global.current_room_left, global.current_room_right), irandom_range(object0.y - 300, global.current_room_down), object1)
+        instance_create(irandom_range(global.current_room_left, global.current_room_right), irandom_range(object0.y - 1500, global.current_room_down), object1)
+        i+=1
+    }
+    
+    monolith_to_add = irandom_range(5, 10)
+    
+    i = 0
+    while( i &lt; monolith_to_add)
+    {
+        instance_create(irandom_range(global.current_room_left, global.current_room_right), irandom_range(object0.y - 1500, global.current_room_down), monolith)
         i+=1
     }
 }
 
 
-if(object0.y &gt; global.current_room_up - 300)
+if(object0.y &gt; global.current_room_up - 1500)
 {
-    global.current_room_up += 300
+    global.current_room_up += 1500
     grass_to_add = irandom_range(200, 250)
     
     i = 0
     while( i &lt; grass_to_add)
     {
-        instance_create(irandom_range(global.current_room_left, global.current_room_right), irandom_range(object0.y + 300, global.current_room_up), object1)
+        instance_create(irandom_range(global.current_room_left, global.current_room_right), irandom_range(object0.y + 1500, global.current_room_up), object1)
+        i+=1
+    }
+    
+    monolith_to_add = irandom_range(5, 10)
+    
+    i = 0
+    while( i &lt; monolith_to_add)
+    {
+        instance_create(irandom_range(global.current_room_left, global.current_room_right), irandom_range(object0.y + 1500, global.current_room_up), monolith)
         i+=1
     }
 }
@@ -124,6 +160,7 @@ if(object0.y &gt; global.current_room_up - 300)
           <argument>
             <kind>1</kind>
             <string>instance_deactivate_object(object1)
+instance_deactivate_object(monolith)
 </string>
           </argument>
         </arguments>
@@ -144,7 +181,7 @@ if(object0.y &gt; global.current_room_up - 300)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_activate_region(object0.x - 400, object0.y - 300, 800, 600, true)
+            <string>instance_activate_region(object0.x - 2000, object0.y - 2000, 4000, 4000, true)
 </string>
           </argument>
         </arguments>
@@ -162,8 +199,5 @@ if(object0.y &gt; global.current_room_up - 300)
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints>
-    <point>0,0</point>
-    <point>16,16</point>
-  </PhysicsShapePoints>
+  <PhysicsShapePoints/>
 </object>
