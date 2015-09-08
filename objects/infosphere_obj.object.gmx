@@ -118,15 +118,15 @@ if(object0.y &lt; global.current_room_down + 1500)
 }
 
 
-if(object0.y &gt; global.current_room_up - 1500)
+if(object0.y &gt; global.current_room_up - 800)
 {
-    global.current_room_up += 1500
+    global.current_room_up += 800
     grass_to_add = irandom_range(200, 250)
     
     i = 0
     while( i &lt; grass_to_add)
     {
-        instance_create(irandom_range(global.current_room_left, global.current_room_right), irandom_range(object0.y + 1500, global.current_room_up), object1)
+        instance_create(irandom_range(global.current_room_left, global.current_room_right), irandom_range(object0.y + 800, global.current_room_up), object1)
         i+=1
     }
     
@@ -135,7 +135,7 @@ if(object0.y &gt; global.current_room_up - 1500)
     i = 0
     while( i &lt; monolith_to_add)
     {
-        instance_create(irandom_range(global.current_room_left, global.current_room_right), irandom_range(object0.y + 1500, global.current_room_up), monolith)
+        instance_create(irandom_range(global.current_room_left, global.current_room_right), irandom_range(object0.y + 800, global.current_room_up), monolith)
         i+=1
     }
 }
@@ -181,7 +181,7 @@ instance_deactivate_object(monolith)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_activate_region(object0.x - 2000, object0.y - 2000, 4000, 4000, true)
+            <string>instance_activate_region(object0.x - 2000, object0.y - 2000, 4000, 6000, true)
 </string>
           </argument>
         </arguments>
