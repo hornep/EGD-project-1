@@ -29,6 +29,8 @@
 global.current_room_left = 0
 global.current_room_down = 0
 global.current_room_up = room_height
+global.add_rock = 200
+global.add_monolith = 5
 </string>
           </argument>
         </arguments>
@@ -54,10 +56,16 @@ global.current_room_up = room_height
             <string>if(object0.x &gt; global.current_room_right - 1500)
 {
     global.current_room_right += 1500
-    grass_to_add = irandom_range(200, 250)
+    
+    min_rock = (global.current_room_up - global.current_room_down)*1500/40000
+    max_rock = min_rock + 50
+    min_mono = (global.current_room_up - global.current_room_down)*1500/800000
+    max_mono = min_mono + 5
+    
+    rocks_to_add = irandom_range(min_rock, max_rock)
     
     i = 0
-    while( i &lt; grass_to_add)
+    while( i &lt; rocks_to_add)
     {
         instance_create(irandom_range(object0.x + 1500, global.current_room_right), irandom_range(global.current_room_up, global.current_room_down), object1)
         i+=1
@@ -76,16 +84,21 @@ global.current_room_up = room_height
 if(object0.x &lt; global.current_room_left + 1500)
 {
     global.current_room_left -= 1500
-    grass_to_add = irandom_range(200, 250)
+    min_rock = (global.current_room_up - global.current_room_down)*1500/40000
+    max_rock = min_rock + 50
+    min_mono = (global.current_room_up - global.current_room_down)*1500/800000
+    max_mono = min_mono + 5
+    
+    rocks_to_add = irandom_range(min_rock, max_rock)
     
     i = 0
-    while( i &lt; grass_to_add)
+    while( i &lt; rocks_to_add)
     {
         instance_create(irandom_range(object0.x - 1500, global.current_room_left), irandom_range(global.current_room_up, global.current_room_down), object1)
         i+=1
     }
     
-    monolith_to_add = irandom_range(5, 10)
+    monolith_to_add = irandom_range(min_mono, max_mono)
     
     i = 0
     while( i &lt; monolith_to_add)
@@ -98,16 +111,21 @@ if(object0.x &lt; global.current_room_left + 1500)
 if(object0.y &lt; global.current_room_down + 1500)
 {
     global.current_room_down -= 1500
-    grass_to_add = irandom_range(200, 250)
+    min_rock = (global.current_room_right - global.current_room_left)*1500/40000
+    max_rock = min_rock + 50
+    min_mono = (global.current_room_right - global.current_room_left)*1500/800000
+    max_mono = min_mono + 5
+    
+    rocks_to_add = irandom_range(min_rock, max_rock)
     
     i = 0
-    while( i &lt; grass_to_add)
+    while( i &lt; rocks_to_add)
     {
         instance_create(irandom_range(global.current_room_left, global.current_room_right), irandom_range(object0.y - 1500, global.current_room_down), object1)
         i+=1
     }
     
-    monolith_to_add = irandom_range(5, 10)
+    monolith_to_add = irandom_range(min_mono, max_mono)
     
     i = 0
     while( i &lt; monolith_to_add)
@@ -121,16 +139,21 @@ if(object0.y &lt; global.current_room_down + 1500)
 if(object0.y &gt; global.current_room_up - 800)
 {
     global.current_room_up += 800
-    grass_to_add = irandom_range(200, 250)
+    min_rock = (global.current_room_right - global.current_room_left)*1500/40000
+    max_rock = min_rock + 50
+    min_mono = (global.current_room_right - global.current_room_left)*1500/800000
+    max_mono = min_mono + 5
+    
+    rocks_to_add = irandom_range(min_rock, max_rock)
     
     i = 0
-    while( i &lt; grass_to_add)
+    while( i &lt; rocks_to_add)
     {
         instance_create(irandom_range(global.current_room_left, global.current_room_right), irandom_range(object0.y + 800, global.current_room_up), object1)
         i+=1
     }
     
-    monolith_to_add = irandom_range(5, 10)
+    monolith_to_add = irandom_range(min_mono, max_mono)
     
     i = 0
     while( i &lt; monolith_to_add)
